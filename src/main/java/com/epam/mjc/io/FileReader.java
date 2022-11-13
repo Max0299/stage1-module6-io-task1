@@ -26,10 +26,10 @@ public class FileReader {
         String email = array[2];
         String phone = array[3];
 
-        String[] name1 = email.split(": ");
-        String[] age1 = email.split(": ");
+        String[] name1 = name.split(": ");
+        String[] age1 = age.split(": ");
         String[] email1 = email.split(": ");
-        String[] phone1 = email.split(": ");
+        String[] phone1 = phone.split(": ");
 
         return new Profile(name1[1], Integer.parseInt(age1[1]), email1[1], Long.parseLong(phone1[1]));
     }
