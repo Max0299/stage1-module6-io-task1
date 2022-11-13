@@ -9,14 +9,13 @@ public class FileReader {
 
     public Profile getDataFromFile(File file) {
         StringBuilder str = new StringBuilder();
-        try(FileInputStream input = new FileInputStream(file)){
+        try (FileInputStream input = new FileInputStream(file)) {
 
             int c;
-            while ((c = input.read()) != -1){
+            while ((c = input.read()) != -1) {
                 str.append((char) c);
             }
-        }
-        catch (IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
 
@@ -32,8 +31,6 @@ public class FileReader {
         String[] email1 = email.split(": ");
         String[] phone1 = email.split(": ");
 
-        Profile profile = new Profile(name1[1],Integer.parseInt(age1[1]),email1[1],Long.parseLong(phone1[1]));
-
-        return profile;
+        return new Profile(name1[1], Integer.parseInt(age1[1]), email1[1], Long.parseLong(phone1[1]));
     }
 }
